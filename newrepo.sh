@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# My first bash script
+# I wrote this before my dumbass realized I have to create the remote
+# repository on Github first anyways. This script will not execute the
+# push command until the remote repository already exists
+
 echo "Are you in the root folder of your new project? [y/n]"
 read CHOICE
 
@@ -22,7 +27,6 @@ elif [ "$CHOICE" == "y" ]; then
 
 	git push -u origin master
 
-	echo "Git repository is ready."
 else
 	echo "Switch to the root directory. Aborting..."
 	exit 1
