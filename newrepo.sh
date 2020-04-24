@@ -22,6 +22,7 @@ elif [ "$CHOICE" == "y" ]; then
 	git remote add origin git@github.com:ancheetah/"$REPONAME"
 	git remote -v
 
+	touch README
 	git add README
 	git commit -m "README"
 
