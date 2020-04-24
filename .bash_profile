@@ -13,6 +13,7 @@ alias mv='mv -iv'
 alias mkdir='mkdir -vp'
 alias tedit='open -a TextEdit'
 alias sublime='open -a SublimeText'
+alias vscode='open -a "Visual Studio Code.app"'
 alias chrome='open -a "Google Chrome.app"'
 alias finder='open -a Finder ./' #open current directory in Finder
 alias rm='echo "rm is disabled, use trash or dl instead"'
