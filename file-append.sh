@@ -14,7 +14,16 @@ for %%a in ("%Src%\*.*") do ren "%%~a" "%%~Na%Str%%%~Xa
 
 #Powershell syntax
 
+#Replace
 Get-ChildItem *JHA*.pdf | Rename-Item -NewName { $_.Name -replace '.pdf','_IGEL.pdf' }
+
+#Append
+Get-ChildItem "*.pdf" | Rename-Item -NewName { "Submittal " + $_.Name }
+
+#Filter files with a regex
+Get-ChildItem | Where-Object { $_.Name -match "^\d" }
+
 
 #the $_ automatic variable represents each file object
 #reference: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7
+#Tip: You can also use $_.Extension
