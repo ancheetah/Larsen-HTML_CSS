@@ -1,0 +1,3 @@
+
+//Filter by date
+Get-ChildItem -recurse | Where-Object {$_.CreationTime -ge "06/09/2020" -and $_.CreationTime -le "06/14/2020"}
