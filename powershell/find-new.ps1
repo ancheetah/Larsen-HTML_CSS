@@ -1,26 +1,34 @@
 #Checks for new files within a specified date range
+#CALL: & "$HOME\find-new.ps1"
 
 #Check working directory
-Write-Host Get-Location
-$choice = Read-Host "Is this the working directory? (y/n) "
-if ($choice.ToLower() == "n") {
-  $workingDir = Read-Host "Enter path: "
-  Set-Location -Path $workingDir -PassThru
+Write-Host $pwd
+$choice = Read-Host "Is this the correct directory? (y/n) "
+if ($choice.ToLower() -eq "n") {
+  $workingDir = Read-Host "Enter path"
 }
-elseif ($choice.ToLower() != "y") {
+elseif ($choice.ToLower() -eq "y") {
+	$workingDir = $pwd
+}
+else {
   Write-Host "Invalid entry... Aborting"
   return -1
 }
 
+Set-Location -LiteralPath $workingDir -PassThru
+
 #Prompt user for date-range
-$startDate = Read-Host "Enter start date: "
-$endDate = Read-Host "Enter end date: "
+$startDate = Read-Host "Enter start date"
+$endDate = Read-Host "Enter end date"
 
 #Locations to check:
 $folders = @("11. Safety", "06. MOMs", "01. BOLs/06. Solar Modules", "05. EE Reports", "09. Photos - Progress")
 
 #List all files in date range
-$folders | ForEach-Object {Get-ChildItem $_ -recurse | Where-Object {$_.CreationTime -ge $startDate -and $_.CreationTime -le $endDate} }
+Get-ChildItem $folders -Recurse | Where-Object {$_.CreationTime -ge $startDate -and $_.CreationTime -le $endDate} | 
+	Format-Table -Property Name, [Blank], CreationTime -GroupBy Directory
+
+Write-Host [Done]
 
 
 #----------------------------
