@@ -1,3 +1,20 @@
+#Powershell Commands
 
-//Filter by date
+#-------------------------------------------------------------------------------------
+
+#Replace
+Get-ChildItem *JHA*.pdf | Rename-Item -NewName { $_.Name -replace '.pdf','_IGEL.pdf' }
+
+#Append
+Get-ChildItem "*.pdf" | Rename-Item -NewName { "Submittal " + $_.Name }
+
+#Find files using a regex
+Get-ChildItem | Where-Object { $_.Name -match "^\d" }
+
+#Filter by date
 Get-ChildItem -recurse | Where-Object {$_.CreationTime -ge "06/09/2020" -and $_.CreationTime -le "06/14/2020"}
+
+#Notes:
+#the $_ automatic variable represents each file object
+#reference: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7
+#Tip: You can also use $_.Extension
