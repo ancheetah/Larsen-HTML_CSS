@@ -7,13 +7,13 @@ Write-Host $pwd
 $oldpath = $pwd
 $choice = Read-Host "Is this the correct directory? (y/n) "
 if ($choice.ToLower() -eq "n") {
-  $workingDir = Read-Host "Enter path"
+  $workingDir = Read-Host "Enter path (no quotes): "
 }
 elseif ($choice.ToLower() -eq "y") {
 	$workingDir = $pwd
 }
 else {
-  Write-Host "Invalid entry... Aborting"
+  Write-Host "Invalid entry... Aborting."
   return -1
 }
 
@@ -21,7 +21,7 @@ Set-Location -LiteralPath $workingDir -PassThru
 
 #Prompt user for date-range
 $startDate = Read-Host "Enter start date"
-$endDate = Read-Host "Enter end date"
+$endDate = Read-Host "Enter end date"	#Should be last date PlanGrid files are CREATED in ShareFile. Most likely the today's date.
 
 #Locations to check:
 $folders = @("11. Safety", "06. MOMs", "01. BOLs/06. Solar Modules", "05. EE Reports", "09. Photos - Progress")
