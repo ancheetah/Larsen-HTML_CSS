@@ -1,0 +1,6 @@
+#Create folders in the working directory for Clearway projects based on a *.csv file with Project IDs (col 1) and Project Names (col 2)
+
+#Read the data into a variable
+#Remove the first part (state) of the Project Name
+#Concatenate col 1 and the substring from col 2
+#Create new folders based on the concatenated list
