@@ -14,6 +14,9 @@ Get-ChildItem | Where-Object { $_.Name -match "^\d" }
 #Filter by date
 Get-ChildItem -recurse | Where-Object {$_.CreationTime -ge "06/09/2020" -and $_.CreationTime -le "06/14/2020"}
 
+#Copy directory contents (foldersPath\*) into folders (test1, test2, test3)
+Get-ChildItem -Path .\test* | foreach {copy-item -path "folderspath\*" -destination $_ -recurse}
+
 #Notes:
 #the $_ automatic variable represents each file object
 #reference: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7
