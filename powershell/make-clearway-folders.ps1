@@ -27,7 +27,7 @@ $subname = $data.name.substring(4)
 
 #Concatenate col 1 and the substring from col 2
 #Create new folders based on the concatenated names
-#foldernames = @()
+$foldernames = @()
 for ($i=0; $i -lt $subname.length; $i++) {
 	$foldernames += ,($data.id[$i] + ' -' + $subname[$i])
 }
