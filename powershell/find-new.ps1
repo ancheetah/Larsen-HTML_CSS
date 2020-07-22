@@ -7,7 +7,7 @@ Write-Host $pwd
 $oldpath = $pwd
 $choice = Read-Host "Is this the correct directory? (y/n) "
 if ($choice.ToLower() -eq "n") {
-  $workingDir = Read-Host "Enter path (no quotation marks) "
+  $workingDir = Read-Host "Enter path of Field Ops folder (no quotation marks) "
 }
 elseif ($choice.ToLower() -eq "y") {
 	$workingDir = $pwd
