@@ -1,6 +1,17 @@
 #Checks for new files within a specified date range
 #EXAMPLE CALL: 	& "$HOME\find-new.ps1"	#from anywhere in command line
 #		find-new		#using alias set up in user profile
+#To Do:
+#   	* Count # of files found in each folder
+#	* Log results in a *.csv table
+#	* Wait to display next page of results until user hits enter?
+#	* Summary message: "Documents found in the following catergories: "
+#			   "Display results? (Y/N)"
+#	* Date prompts should be more descriptive (i.e. end date = last download date)
+#	* Can extract info about WHO uploaded the document?
+#	* Need a separate script to upload documents to ATLAS if API exists
+#	* Fix output error: why do folders that are not subdirectories get listed sometimes?
+#	* Check for proper file name format, especially for EPC reports
 
 #Check working directory
 Write-Host $pwd
