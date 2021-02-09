@@ -1,0 +1,1 @@
+Set-Alias -Name find-new -Value "$HOME\find-new.ps1"
