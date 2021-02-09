@@ -1,0 +1,5 @@
+sort photos into folders by month
+
+extract metadata for "date-taken"
+move photos into folder of corresponding month
+	-if the folder doesn't exist then create it (e.g. 2020_05)

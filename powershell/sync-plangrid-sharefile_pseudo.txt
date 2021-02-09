@@ -1,0 +1,7 @@
+PlanGrid Cloud storage sync
+
+assume the new dir structure is implemented for the project
+1. check PlanGrid folder for new files (i.e. date >= today)
+2. For each new file, search Sharefile to make sure the file does not already exist
+	-If the file already exists but has an earlier date then compare the two files or prompt user to check manually
+3. copy new files and upload to same directory in OneDrive if all requirements are met

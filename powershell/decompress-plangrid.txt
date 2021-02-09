@@ -1,0 +1,7 @@
+decompress a zipped file from plangrid
+
+decompress the zip file
+Find the "Documents-xxx" folder and cd into it.
+If there is more than one folder then stop and open the current dir in Explorer
+If there is only one folder then cd into it and open the dir in Explorer
+Move the files to ShareFile.

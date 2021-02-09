@@ -1,0 +1,8 @@
+This program should be executed by month
+
+1.) Split or Extract dailies in Adobe PDF with default numbering sys
+2.) Create a text file in the save directory with a list of the default filenames of the dailies.
+3.) Store filename list into arr1
+4.) Create an array (arr2) the same length as arr1. Store the corresponding days in arr2.
+5.) For each file, rename to "MM-DD-YYYY_Project_Daily_Report_Initials"
+6.) Change initials if necessary
